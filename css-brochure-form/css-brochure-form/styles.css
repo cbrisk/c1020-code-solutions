@@ -1,0 +1,42 @@
+body {
+  font-family: 'AtlasGrotesk', sans-serif;
+}
+
+select,
+input.wide {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+label {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+h2 {
+  color: orangered;
+  text-align: center;
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+}
+
+.button {
+  background-color: orangered;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 6px 14px;
+  letter-spacing: 2px;
+}
+
+input::placeholder,
+option {
+  font-family: 'AtlasGrotesk', sans-serif;
+}
+
+div.right {
+  text-align: right;
+}
