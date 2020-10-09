@@ -1,0 +1,56 @@
+body {
+  font-family: 'Karla', sans-serif;
+}
+
+p {
+  line-height: 30px;
+}
+
+button {
+  color: crimson;
+  border: 3px solid crimson;
+  background-color: white;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+
+h3 {
+  height: 30px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.custom-width {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.column-full {
+  width: 100%;
+}
+
+.column-half {
+  width: 50%;
+  display: flex;
+}
+
+.pad-top {
+  padding-top: 30px;
+}
