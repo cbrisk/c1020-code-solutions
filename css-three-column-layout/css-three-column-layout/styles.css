@@ -1,11 +1,11 @@
 body {
   font-family: 'Lato', sans-serif;
+  text-align: center;
 }
 
 h1,
 h2 {
   color: white;
-  text-align: center;
 }
 
 p {
@@ -15,13 +15,13 @@ p {
 section {
   max-width: 1000px;
   margin: 0 auto;
-  padding-bottom: 20px;
+  padding-bottom: 30px 30px;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  background-color: dodgerblue;
+  background-color: #0096cc;
 }
 
 .row {
@@ -35,6 +35,7 @@ section {
 .column-third {
   flex-basis: calc(100% / 3);
   justify-content: space-evenly;
+  margin: 30px 30px;
 }
 
 img {
