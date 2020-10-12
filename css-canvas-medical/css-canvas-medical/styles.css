@@ -1,0 +1,110 @@
+body {
+  font-family: 'Avenir', sans-serif;
+}
+
+a {
+  margin: 30px 20px;
+  padding: 5px 10px;
+  color: gray;
+}
+
+.container {
+  width: 1300px;
+  margin: 0 auto;
+}
+
+.row {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.header {
+  justify-content: space-between;
+  border-bottom: 2px solid lightgray;
+}
+
+.flex {
+  display: flex;
+}
+
+.blue-back {
+  background-color: #2559a7;
+  border-radius: 5px;
+  color: white;
+}
+
+.hero-section {
+  height: 65vh;
+  width: 95%;
+  margin: 20px auto;
+  position: relative;
+  background-image: url(images/hero.jpg);
+  background-size: cover;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(142, 138, 138, 0.5);
+}
+
+img.sixty {
+  width: 60%;
+  padding-top: 30px;
+}
+
+.absolute {
+  position: absolute;
+  width: 55%;
+  top: 60px;
+  left: 40px;
+  color: white;
+}
+
+.absolute p {
+  font-size: 18px;
+  line-height: 30px;
+  padding-bottom: 20px;
+}
+
+.grey {
+  margin: 30px auto;
+  padding: 30px 0;
+  color: gray;
+  background-color: #f3f5f6;
+}
+
+.dark {
+  background-color: #464948;
+  color: white;
+  padding: 60px 40px;
+  margin-top: 30px;
+}
+
+.footer {
+  padding: 20px 0;
+}
+
+.space {
+  justify-content: space-between;
+}
+
+.align {
+  align-self: center;
+}
+
+.width-half {
+  width: 50%;
+}
+
+.center {
+  text-align: center;
+}
+
+#margin {
+  margin: 0;
+}
