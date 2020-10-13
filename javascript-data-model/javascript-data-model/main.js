@@ -2,27 +2,31 @@
 
 var orderHistory = [
   {
-    customerName: 'John Doe',
-    city: 'Los Angeles',
-    items: 'Bose Headphones',
-    freeGift: true
+    orderNo: 11439416898772232,
+    dateOfOrder: 'Aug 4 2020',
+    customerName: 'JS Masher',
+    items: 'JavaScript for impatient programmers',
+    totalPrice: 34.00
   },
   {
-    customerName: 'Mark Black',
-    city: 'Irvine',
-    items: ['iPad', 'Laptop', 'Computer Science Book', 'Toothbrush'],
-    freeGift: false
+    orderNo: 11399842681280257,
+    dateOfOrder: 'July 19 2020',
+    customerName: 'JS Masher',
+    items: 'The Timeless Way of Building',
+    totalPrice: 44.53
   },
   {
-    customerName: 'Susan Sunnylife',
-    city: 'San Diego',
-    items: 'Pencils',
-    freeGift: false
+    orderNo: 11428755579059409,
+    dateOfOrder: 'July 7 2020',
+    customerName: 'JS Masher',
+    items: 'Gamecube Controller Adapter',
+    totalPrice: 17.22
   },
   {
-    customerName: 'Ted Gilson',
-    city: 'Burbank',
-    items: [{ name: 'Good Cooking', price: 29.99 }, { name: 'Fix Your Car', price: 19.99 }],
-    freeGift: true
+    orderNo: 11328831772648248,
+    dateOfOrder: 'July 5 2020',
+    customerName: 'JS Masher',
+    items: ['Gamecube Controller', 'The art of SQL'],
+    totalPrice: 138.93
   }
 ];
