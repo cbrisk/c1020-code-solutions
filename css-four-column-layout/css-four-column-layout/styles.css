@@ -7,9 +7,18 @@ img {
   max-width: 100%;
 }
 
+h3 {
+  font-size: 1em;
+}
+
+p {
+  font-size: 0.7em;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  background-color: #f5f5f5;
 }
 
 .row {
