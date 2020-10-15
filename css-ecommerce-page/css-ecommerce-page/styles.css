@@ -1,0 +1,61 @@
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  letter-spacing: -0.5px;
+  font-size: 0.9rem;
+  font-weight: bolder;
+}
+
+del,
+span {
+  color: #b8b8b8;
+  padding-left: 6px;
+  background-color: white;
+  font-weight: normal;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.row {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  flex-basis: 18%;
+  display: flex;
+  flex-direction: column;
+}
+
+.span-one {
+  border-left: 2px solid #b8b8b8;
+  margin-left: 6px;
+}
+
+.custom {
+  background-color: #f0dfad;
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+#height {
+  height: 100%;
+}
