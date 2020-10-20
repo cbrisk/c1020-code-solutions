@@ -7,7 +7,9 @@ function reverseWords(string) {
     for (var j = strArray[i].length - 1; j >= 0; j--) {
       newString += strArray[i].charAt(j);
     }
-    newString += ' ';
+    if (i !== strArray.length - 1) {
+      newString += ' ';
+    }
   }
   return newString;
 }
