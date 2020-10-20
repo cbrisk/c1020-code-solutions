@@ -2,10 +2,10 @@
 function titleCase(title) {
   var newTitle = '';
   var strArray = title.split(' ');
-  var lower = ['and', 'or', 'nor', 'but', 'a', 'as', 'at', 'by', 'for', 'in', 'of', 'on ', 'per', 'to'];
+  var lower = ['and', 'or', 'nor', 'but', 'a', 'as', 'the', 'an', 'at', 'by', 'for', 'in', 'of', 'on ', 'per', 'to'];
 
   for (var i = 0; i < strArray.length; i++) {
-    if ((lower.indexOf(strArray[i]) !== -1 && i !== 0) || (strArray[i] === 'the' && newTitle[newTitle.length - 2] !== ':')) {
+    if (lower.indexOf(strArray[i]) !== -1 && i !== 0 && newTitle[newTitle.length - 2] !== ':') {
       newTitle += strArray[i];
     } else if (strArray[i].toLowerCase() === 'javascript:') {
       newTitle += 'JavaScript:';
