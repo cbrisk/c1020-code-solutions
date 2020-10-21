@@ -1,11 +1,22 @@
+button {
+  font-size: 18px;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: royalblue;
+}
+
 .container {
   max-width: 1300px;
   margin: 0 auto;
   font-family: 'Inconsolata', monospace;
   font-size: 30px;
-  font-weight: 600;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -13,6 +24,7 @@
 .row {
   height: 10%;
   word-spacing: -8px;
+  font-weight: 600;
 }
 
 .current {
@@ -26,4 +38,13 @@
 .red {
   color: red;
   border-bottom: 3px solid red;
+}
+
+.none {
+  display: none;
+}
+
+.play {
+  text-align: center;
+  margin-top: 40px;
 }
