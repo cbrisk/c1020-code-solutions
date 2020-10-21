@@ -1,0 +1,27 @@
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  font-family: 'Inconsolata', monospace;
+  font-size: 30px;
+  font-weight: 600;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  height: 10%;
+}
+
+.current {
+  border-bottom: 3px solid black;
+}
+
+.green {
+  color: lime;
+}
+
+.red {
+  color: red;
+}
