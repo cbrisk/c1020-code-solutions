@@ -8,6 +8,6 @@ document.addEventListener('keydown', function (event) {
     $nodeList[index].classList.add('current');
     $nodeList[index - 1].className = 'green';
   } else {
-    $nodeList[index].className = 'current red';
+    $nodeList[index].className = 'red';
   }
 });
