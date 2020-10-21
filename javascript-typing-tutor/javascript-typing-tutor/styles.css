@@ -12,6 +12,7 @@
 
 .row {
   height: 10%;
+  word-spacing: -4px;
 }
 
 .current {
