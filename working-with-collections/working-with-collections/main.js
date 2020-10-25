@@ -1,9 +1,6 @@
 /* global _ */
 /* eslint-disable no-console */
 // console.log('Lodash is loaded:', typeof _ !== 'undefined');
-// var person = [{ name: 'John', hand: [] }];
-// var array = [{ rank: '10' }, { rank: '10' }];
-// var pulled = _.pullAt(array, [0, 1]);
 var players = [
   { name: 'John', hand: [], points: 0 },
   { name: 'Steve', hand: [], points: 0 },
@@ -23,7 +20,7 @@ function playGame(players, cards) {
   cards = _.shuffle(cards);
 
   for (var k = 0; k < players; k++) {
-    players[k].hand.push(_.pullAt(cards, [0, 1]));
+    players[k].hand = (_.pullAt(cards, [0, 1]));
     var card1 = players[k].hand[0].rank;
     var card2 = players[k].hand[1].rank;
     if (card1 === rank[0] && card2 === rank[9]) {
