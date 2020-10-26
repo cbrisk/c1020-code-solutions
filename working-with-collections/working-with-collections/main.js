@@ -19,25 +19,29 @@ function playGame(players, cards) {
   var pointsVal = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10];
   cards = _.shuffle(cards);
 
-  for (var k = 0; k < players; k++) {
-    players[k].hand = (_.pullAt(cards, [0, 1]));
-    var card1 = players[k].hand[0].rank;
-    var card2 = players[k].hand[1].rank;
-    if (card1 === rank[0] && card2 === rank[9]) {
-      players[k].points += 21;
-    } else {
-      players[k].points += pointsVal[_.indexOf(rank, card1)];
-      players[k].points += pointsVal[_.indexOf(rank, card2)];
+  while (cards.length > 0) {
+    for (var k = 0; k < players.length && cards.length > 0; k++) {
+      players[k].hand = _.pullAt(cards, [0, 1]);
+      var card1 = players[k].hand[0].rank;
+      var card2 = players[k].hand[1].rank;
+      if (card1 === rank[0] && card2 === rank[9]) {
+        players[k].points += 21;
+      } else {
+        players[k].points += pointsVal[_.indexOf(rank, card1)];
+        players[k].points += pointsVal[_.indexOf(rank, card2)];
+      }
     }
   }
-
-  for (var l = 0; l < players; l++) {
-    var winner = null;
-    var highestPoints = 0;
-    if (players.points > highestPoints) {
-      winner = players[l];
+  var highestPoints = 0;
+  for (var l = 0; l < players.length; l++) {
+    if (players[l].points > highestPoints) {
+      highestPoints = players[l].points;
     }
-    console.log('The winner is: ', winner);
+  }
+  for (var m = 0; m < players.length; m++) {
+    if (players[m].points === highestPoints) {
+      console.log('The winner is: ', players[m]);
+    }
   }
 }
 playGame(players, cards);
