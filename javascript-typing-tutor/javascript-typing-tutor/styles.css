@@ -41,7 +41,7 @@ button {
 }
 
 .none {
-  display: none;
+  visibility: hidden;
 }
 
 .play {
