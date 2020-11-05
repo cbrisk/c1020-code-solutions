@@ -1,10 +1,10 @@
 var $images = document.querySelectorAll('img');
 var $icons = document.querySelectorAll('.size2');
 
-var x = 1;
-var previous = x - 1;
-var counter = 3;
-var num = null;
+var x = 1; // Used to keep track which image to display
+var previous = x - 1; // Used to keep track for hiding the previous image
+var counter = 3; // After user selects change, goes back to narmal after 3 secs
+var num = null; // Used if user clicks one of the circles, now we needto hide it
 
 setInterval(function () {
   if (counter === 3) {
@@ -29,7 +29,7 @@ setInterval(function () {
   }
 }, 3000);
 
-var clicks = 0;
+var clicks = 0; // If user clicks arrow, depending if was first click or not requires diffrent logic
 
 document.addEventListener('click', function (event) {
   if (!event.target.matches('i')) {
@@ -77,7 +77,7 @@ document.addEventListener('click', function (event) {
     $icons[x].className = 'size2 fas fa-circle';
     $icons[previous].className = 'size2 far fa-circle';
     clicks++;
-  } else {
+  } else { // If user clicks one of the circles
     for (var i = 0; i < $icons.length; i++) {
       if ($icons[i] === event.target) {
         $images[i].classList.remove('hidden');
@@ -89,7 +89,7 @@ document.addEventListener('click', function (event) {
       }
     }
   }
-  setTimeout(function () {
+  setTimeout(function () { // Function for resuming the carousel after 3 secs
     counter = 3;
   }, 3000);
 });
