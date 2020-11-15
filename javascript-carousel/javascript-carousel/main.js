@@ -1,20 +1,20 @@
 var $icons = document.querySelectorAll('.size2');
 var $image = document.querySelector('img');
 var imageUrl = ['images/001.png', 'images/004.png', 'images/007.png', 'images/025.png', 'images/039.png'];
-var x = 0; // Used to keep track which image to display
-$image.setAttribute('src', imageUrl[x]);
+var i = 0; // Used to keep track which image to display
+$image.setAttribute('src', imageUrl[i]);
 
-var counter = 3; // After user selects change, goes back to narmal after 3 secs
+var counter = 3; // After user selects change, goes back to normal after 3 secs
 
 setInterval(function () {
   if (counter === 3) {
-    if (x < imageUrl.length - 1 && iconClick === false) {
-      x++;
+    if (i < imageUrl.length - 1 && iconClick === false) {
+      i++;
     } else {
-      x = 0;
+      i = 0;
     }
     iconClick = false; // reset to false, so it should't be back at zero
-    display(x);
+    display(i);
   }
 }, 3000);
 
@@ -25,24 +25,23 @@ document.addEventListener('click', function (event) {
   }
   counter = 0;
   if (event.target.matches('i.fa-chevron-right')) {
-    if (x < imageUrl.length - 1) {
-      x++;
+    if (i < imageUrl.length - 1) {
+      i++;
     } else {
-      x = 0;
+      i = 0;
     }
-    display(x);
+    display(i);
   } else if (event.target.matches('i.fa-chevron-left')) {
-    if (x > 0) {
-      x--;
+    if (i > 0) {
+      i--;
     } else {
-      x = imageUrl.length - 1;
+      i = imageUrl.length - 1;
     }
-    display(x);
+    display(i);
   } else { // If user clicks one of the circles
-    for (var i = 0; i < $icons.length; i++) {
+    for (i = 0; i < $icons.length; i++) {
       if ($icons[i] === event.target) {
-        x = i;
-        display(x);
+        display(i);
       }
     }
     iconClick = true;
@@ -52,13 +51,13 @@ document.addEventListener('click', function (event) {
   }, 3000);
 });
 
-var display = function (x) {
-  $image.setAttribute('src', imageUrl[x]);
-  for (var i = 0; i < $icons.length; i++) {
-    if (i === x) {
-      $icons[i].className = 'size2 fas fa-circle';
+var display = function (i) {
+  $image.setAttribute('src', imageUrl[i]);
+  for (var j = 0; j < $icons.length; j++) {
+    if (j === i) {
+      $icons[j].className = 'size2 fas fa-circle';
     } else {
-      $icons[i].className = 'size2 far fa-circle';
+      $icons[j].className = 'size2 far fa-circle';
     }
   }
 };
