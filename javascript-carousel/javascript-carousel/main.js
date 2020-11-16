@@ -4,26 +4,23 @@ var imageUrl = ['images/001.png', 'images/004.png', 'images/007.png', 'images/02
 var i = 0; // Used to keep track which image to display
 $image.setAttribute('src', imageUrl[i]);
 
-var counter = 3; // After user selects change, goes back to normal after 3 secs
+var id = setTimeout(displayImg, 3000);
 
-setInterval(function () {
-  if (counter === 3) {
-    if (i < imageUrl.length - 1 && iconClick === false) {
-      i++;
-    } else {
-      i = 0;
-    }
-    iconClick = false; // reset to false, so it should't be back at zero
-    display(i);
+function displayImg() {
+  if (i < imageUrl.length - 1) {
+    i++;
+  } else {
+    i = 0;
   }
-}, 3000);
+  display(i);
+  setTimeout(displayImg, 3000);
+}
 
-var iconClick = false;
 document.addEventListener('click', function (event) {
   if (!event.target.matches('i')) {
     return;
   }
-  counter = 0;
+  clearTimeout(id);
   if (event.target.matches('i.fa-chevron-right')) {
     if (i < imageUrl.length - 1) {
       i++;
@@ -44,11 +41,9 @@ document.addEventListener('click', function (event) {
         display(i);
       }
     }
-    iconClick = true;
+    i = 10; // Dummy value to have it reset to 0
   }
-  setTimeout(function () { // Function for resuming the carousel after 3 secs
-    counter = 3;
-  }, 3000);
+  setTimeout(displayImg, 3000);
 });
 
 var display = function (i) {
