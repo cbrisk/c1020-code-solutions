@@ -27,23 +27,20 @@ document.addEventListener('click', function (event) {
     } else {
       i = 0;
     }
-    display(i);
   } else if (event.target.matches('i.fa-chevron-left')) {
     if (i > 0) {
       i--;
     } else {
       i = imageUrl.length - 1;
     }
-    display(i);
   } else { // If user clicks one of the circles
     for (i = 0; i < $icons.length; i++) {
       if ($icons[i] === event.target) {
-        display(i);
+        break;
       }
     }
-    i = 10; // Dummy value to have it reset to 0
   }
-  setTimeout(displayImg, 3000);
+  display(i);
 });
 
 var display = function (i) {
