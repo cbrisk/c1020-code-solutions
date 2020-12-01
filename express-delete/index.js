@@ -22,9 +22,8 @@ const grades = [
   }
 ];
 
-app.get('/api/grades', (req, res, next) => {
+app.get('/api/grades', (req, res) => {
   res.json(grades);
-  next();
 });
 
 app.delete('/api/grades/:id', (req, res) => {
