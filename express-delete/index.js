@@ -27,12 +27,13 @@ app.get('/api/grades', (req, res) => {
 });
 
 app.delete('/api/grades/:id', (req, res) => {
-  const idNum = req.params.id;
-  for (let i = 0; i < grades.length; i++) {
-    if (grades[i].id.toString() === idNum) {
-      grades.splice(i, 1);
-      res.sendStatus(204);
-    }
+  const idNum = parseInt(req.params.id);
+  const index = grades.findIndex(obj => obj.id === idNum);
+  if (index !== -1) {
+    grades.splice(index, 1);
+    res.sendStatus(204);
+  } else {
+    res.sendStatus(404);
   }
 });
 
