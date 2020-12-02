@@ -11,10 +11,8 @@ app.use(express.json());
 const notes = [];
 
 app.get('/api/notes', function (req, res) {
-  if (json.notes !== {}) {
-    for (var note in json.notes) {
-      notes.push(json.notes[note]);
-    }
+  for (var note in json.notes) {
+    notes.push(json.notes[note]);
   }
   res.json(notes);
 });
