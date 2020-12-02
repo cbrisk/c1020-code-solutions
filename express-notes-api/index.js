@@ -8,9 +8,8 @@ const app = express();
 
 app.use(express.json());
 
-const notes = [];
-
 app.get('/api/notes', function (req, res) {
+  const notes = [];
   for (var note in json.notes) {
     notes.push(json.notes[note]);
   }
