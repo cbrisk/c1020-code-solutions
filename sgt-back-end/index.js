@@ -9,18 +9,6 @@ const db = new pg.Pool({
   connectionString: 'postgres://dev:lfz@localhost/studentGradeTable'
 });
 
-// const text = 'INSERT INTO users(name, email) VALUES($1, $2) RETURNING *'
-// const values = ['brianc', 'brian.m.carlson@gmail.com']
-
-// // promise
-// client
-//   .query(text, values)
-//   .then(res => {
-//     console.log(res.rows[0])
-//     // { name: 'brianc', email: 'brian.m.carlson@gmail.com' }
-//   })
-//   .catch(e => console.error(e.stack))
-
 app.get('/api/grades', (req, res, next) => {
   const sql = `
     select *
