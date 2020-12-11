@@ -6,21 +6,22 @@ export default class Stopwatch extends React.Component {
     this.state = { isRunning: false, time: 0 };
 
     this.handleClick = this.handleClick.bind(this);
-    this.handleClick2 = this.handleClick2.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   handleClick() {
     this.setState({
       isRunning: !this.state.isRunning
+    }, () => {
+      if (this.state.isRunning) {
+        this.timerID = setInterval(
+          () => this.tick(),
+          1000
+        );
+      } else {
+        clearInterval(this.timerID);
+      }
     });
-    if (!this.state.isRunning) {
-      this.timerID = setInterval(
-        () => this.tick(),
-        1000
-      );
-    } else {
-      clearInterval(this.timerID);
-    }
   }
 
   tick() {
@@ -29,7 +30,7 @@ export default class Stopwatch extends React.Component {
     });
   }
 
-  handleClick2() {
+  handleReset() {
     if (!this.state.isRunning) {
       this.setState({
         time: 0
@@ -47,7 +48,7 @@ export default class Stopwatch extends React.Component {
 
     return (
       <div className='flex'>
-        <div className='circle' name='reset' onClick={this.handleClick2}>
+        <div className='circle' name='reset' onClick={this.handleReset}>
           <div className='time'>
             {this.state.time}
           </div>
