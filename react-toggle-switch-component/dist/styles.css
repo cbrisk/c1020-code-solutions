@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+.switch {
+  height: 20px;
+  width: 40px;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.round {
+  height: 18px;
+  width: 18px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.on {
+  background-color: #759834;
+}
+
+.off {
+  background-color: #9aa2ac;
+}
+
+.margin {
+  margin-left: 20px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
