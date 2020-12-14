@@ -1,0 +1,40 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+a,
+i {
+  margin: 6px 10px;
+}
+
+a:hover,
+i:hover,
+.background {
+  cursor: pointer;
+}
+
+.menu {
+  padding: 30px 20px;
+  height: 100%;
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.background {
+  background-color: rgba(120, 120, 120, 0.9);
+  width: 90%;
+  height: 100%;
+  position: fixed;
+  right: 0;
+}
+
+.large {
+  font-size: 1.4rem;
+}
+
+.flex {
+  display: flex;
+}
