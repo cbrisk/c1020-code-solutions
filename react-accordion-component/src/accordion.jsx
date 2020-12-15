@@ -16,22 +16,24 @@ export default class Accordion extends React.Component {
 
 
   render() {
-    let className;
-    const list = this.props.list.map((item, index) => {
-      {className = (index === this.state.indexOfDisplayed) ? '' : 'hidden'}
-      <div key={item.topic}>
-        <li className='topic' onClick={this.handleClick} id={index}>
-          {item.topic}
-        </li>
-        <li className={className}>
-          {item.details}
-        </li>
-      </div>
-    });
-
     return (
       <ul>
-        {list}
+        {
+          let className;
+          this.props.list.map((item, index) => {
+            className = (index === this.state.indexOfDisplayed) ? '' : 'hidden';
+            return (
+              <div key={item.topic}>
+                <li className='topic' onClick={this.handleClick} id={index}>
+                  {item.topic}
+                </li>
+                <li className={className}>
+                  {item.details}
+                </li>
+              </div>
+            );
+          });
+        }
       </ul>
     );
   }
