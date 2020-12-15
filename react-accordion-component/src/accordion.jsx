@@ -12,15 +12,13 @@ export default class Accordion extends React.Component {
     this.setState({
       indexOfDisplayed: event.target.getAttribute('id')
     });
-    let className = 'hidden';
-    if (id === this.state.indexOfDisplayed) {
-      className = '';
-    }
   }
 
 
   render() {
-    const list = this.props.list.map((item, index) =>
+    let className;
+    const list = this.props.list.map((item, index) => {
+      {className = (index === this.state.indexOfDisplayed) ? '' : 'hidden'}
       <div key={item.topic}>
         <li className='topic' onClick={this.handleClick} id={index}>
           {item.topic}
@@ -29,7 +27,7 @@ export default class Accordion extends React.Component {
           {item.details}
         </li>
       </div>
-    );
+    });
 
     return (
       <ul>
