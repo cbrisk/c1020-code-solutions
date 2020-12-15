@@ -9,17 +9,24 @@ export default class Accordion extends React.Component {
   }
 
   handleClick(event) {
+    const current = parseInt(event.target.getAttribute('id'));
+    const previous = this.state.indexOfDisplayed;
+    let newIndex;
+    if (current === previous) {
+      newIndex = null;
+    } else {
+      newIndex = current;
+    }
     this.setState({
-      indexOfDisplayed: event.target.getAttribute('id')
+      indexOfDisplayed: newIndex
     });
   }
 
-
   render() {
+    let className;
     return (
       <ul>
         {
-          let className;
           this.props.list.map((item, index) => {
             className = (index === this.state.indexOfDisplayed) ? '' : 'hidden';
             return (
@@ -32,7 +39,7 @@ export default class Accordion extends React.Component {
                 </li>
               </div>
             );
-          });
+          })
         }
       </ul>
     );

@@ -7,12 +7,15 @@ li {
   padding: 8px;
   border: 2px solid black;
   list-style: none;
-
 }
 
 .topic {
   background-color: lightgray;
   font-size: 1.4rem;
+}
+
+.topic:hover {
+  cursor: pointer;
 }
 
 .hidden {
