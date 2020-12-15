@@ -53,8 +53,10 @@ export default class App extends React.Component {
     })
       .then(response => response.json())
       .then(data => {
-        this.setState(state => {
-          state.todos.push(data);
+        const copyTodos = this.state.todos.slice();
+        copyTodos.push(data);
+        this.setState({
+          todos: copyTodos
         });
       })
       .catch(error => {
