@@ -1,0 +1,20 @@
+* {
+  font-family: sans-serif;
+}
+
+li {
+  width: 400px;
+  padding: 8px;
+  border: 2px solid black;
+  list-style: none;
+
+}
+
+.topic {
+  background-color: lightgray;
+  font-size: 1.4rem;
+}
+
+.hidden {
+  display: none;
+}
