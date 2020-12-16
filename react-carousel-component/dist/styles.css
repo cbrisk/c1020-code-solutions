@@ -2,6 +2,10 @@ img {
   max-width: 60%;
 }
 
+i:hover {
+  cursor: pointer;
+}
+
 .container {
   width: 600px;
   margin: 0 auto;

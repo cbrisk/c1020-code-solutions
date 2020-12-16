@@ -9,30 +9,55 @@ export default class Carousel extends React.Component {
   }
 
   handleClick(event) {
+    clearInterval(this.ID);
+    let newIndex;
+    if (event.target.getAttribute('id') === '5') {
+      newIndex = this.state.indexOfDisplayed > 0 ? this.state.indexOfDisplayed - 1 : this.props.imageList.length - 1;
+    } else if (event.target.getAttribute('id') === '6') {
+      newIndex = this.state.indexOfDisplayed < this.props.imageList.length - 1 ? this.state.indexOfDisplayed + 1 : 0;
+    } else {
+      newIndex = parseInt(event.target.getAttribute('id'));
+    }
+    this.setState({
+      indexOfDisplayed: newIndex
+    }, () => {
+      this.ID = setInterval(
+        () => this.move(),
+        3000
+      );
+    });
+  }
+
+  componentDidMount() {
+    this.ID = setInterval(
+      () => this.move(),
+      3000
+    );
+  }
+
+  move() {
+    const newIndex = this.state.indexOfDisplayed < this.props.imageList.length - 1 ? this.state.indexOfDisplayed + 1 : 0;
     this.setState({
       indexOfDisplayed: newIndex
     });
   }
-  componentDidMount() {
 
-  }
-
-  // "size2 fas fa-circle"
-  // "size2 far fa-circle"
   render() {
+    let className;
     return (
       <div className="container">
         <div className="row one">
-          <i className="size1 fas fa-chevron-left" onClick={this.handleClick}></i>
-          <img src={this.props.imageList[this.state.indexOfDisplayed]}>
-          <i class="size1 fas fa-chevron-right" onClick={this.handleClick}></i>
+          <i id='5' className="size1 fas fa-chevron-left" onClick={this.handleClick}></i>
+          <img src={`../src/${this.props.imageList[this.state.indexOfDisplayed]}`}></img>
+          <i id='6' className="size1 fas fa-chevron-right" onClick={this.handleClick}></i>
         </div>
-        <div class="row two">
-          <i id={0} className={className} onClick={this.handleClick}></i>
-          <i id={1} className={className} onClick={this.handleClick}></i>
-          <i id={2} className={className} onClick={this.handleClick}></i>
-          <i id={3} className={className} onClick={this.handleClick}></i>
-          <i id={4} className={className} onClick={this.handleClick}></i>
+        <div className="row two">
+          {
+            this.props.imageList.map((item, index) => {
+              className = (index === this.state.indexOfDisplayed) ? 'size2 fas fa-circle' : 'size2 far fa-circle';
+              return <i key={index} id={index} className={className} onClick={this.handleClick}></i>;
+            })
+          }
         </div>
       </div>
     );
