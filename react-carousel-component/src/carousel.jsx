@@ -3,7 +3,7 @@ import React from 'react';
 export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { indexOfDisplayed: null };
+    this.state = { indexOfDisplayed: 0 };
 
     this.handleClick = this.handleClick.bind(this);
   }
@@ -13,6 +13,10 @@ export default class Carousel extends React.Component {
       indexOfDisplayed: newIndex
     });
   }
+  componentDidMount() {
+
+  }
+
   // "size2 fas fa-circle"
   // "size2 far fa-circle"
   render() {
@@ -20,7 +24,7 @@ export default class Carousel extends React.Component {
       <div className="container">
         <div className="row one">
           <i className="size1 fas fa-chevron-left" onClick={this.handleClick}></i>
-          <img src={currentImg}>
+          <img src={this.props.imageList[this.state.indexOfDisplayed]}>
           <i class="size1 fas fa-chevron-right" onClick={this.handleClick}></i>
         </div>
         <div class="row two">
