@@ -1,0 +1,35 @@
+img {
+  max-width: 60%;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.row {
+  margin: 0 auto;
+  display: flex;
+}
+
+.one {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.two {
+  justify-content: center;
+}
+
+.size1 {
+  font-size: 24px;
+}
+
+.size2 {
+  font-size: 16px;
+  margin: 6px;
+}
