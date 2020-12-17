@@ -11,9 +11,9 @@ export default class Carousel extends React.Component {
   handleClick(event) {
     clearInterval(this.ID);
     let newIndex;
-    if (event.target.getAttribute('id') === '5') {
+    if (event.target.getAttribute('data-info') === 'left') {
       newIndex = this.state.indexOfDisplayed > 0 ? this.state.indexOfDisplayed - 1 : this.props.imageList.length - 1;
-    } else if (event.target.getAttribute('id') === '6') {
+    } else if (event.target.getAttribute('data-info') === 'right') {
       newIndex = this.state.indexOfDisplayed < this.props.imageList.length - 1 ? this.state.indexOfDisplayed + 1 : 0;
     } else {
       newIndex = parseInt(event.target.getAttribute('id'));
@@ -47,9 +47,9 @@ export default class Carousel extends React.Component {
     return (
       <div className="container">
         <div className="row one">
-          <i id='5' className="size1 fas fa-chevron-left" onClick={this.handleClick}></i>
+          <i data-info="left" className="size1 fas fa-chevron-left" onClick={this.handleClick}></i>
           <img src={`../src/${this.props.imageList[this.state.indexOfDisplayed]}`}></img>
-          <i id='6' className="size1 fas fa-chevron-right" onClick={this.handleClick}></i>
+          <i data-info="right" className="size1 fas fa-chevron-right" onClick={this.handleClick}></i>
         </div>
         <div className="row two">
           {
