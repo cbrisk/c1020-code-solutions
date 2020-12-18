@@ -1,0 +1,34 @@
+User can sign up:
+-When the page first loads (and the path doesn't contain anything), a Home component is created
+-Whithin the home component, if the user is not currently signed-in, it redirects to the sign in page
+-This calls setState with the new route (sign-in), the page then rerenders
+-This time an Auth component is created, which in turn creates an Authform component
+-The user can then instead select register to sign-up, the path updates (sign-up), and the page rerenders
+with a new Auth component which renders an Authform
+-The Authform component has a handler for submits which will call the fetch api
+at the endpoint 'sign-up', this info is obtained from the prop route.path
+-The express server recieves the request, validates the input, argon2 hashes the password, then
+queries the database to insert the record.
+
+User can sign in:
+-When the page first loads (and the path doesn't contain anything), a Home component is created
+-Whithin the home component, if the user is not currently signed-in, it redirects to the sign in page
+-An Auth component is then created, which in turn creates an Authform component
+-The Authform component has a handler for submits which will call the fetch api
+at the endpoint 'sign-in', this info is obtained from the prop route.path
+-The express server recieves the request, validates the input, then queries the database for
+this particular user, argon2 verifies the password, calls jwt to sign a token which it returns
+-When the call to fetch recieves this response, if the user and token are truthy,
+it calls the onsignIn method, which is passed down as props, and sets the token into local storage
+-We call setState and set the user
+-The page rerenders, the path is still sign-in, it creates an Auth component
+-In the Auth component, if the user is truthy, it redirects the path to " "
+-This calls setState with the new route, the page rerenders
+-Now it returns a Home element, and since the user is truthy, it displays to cool GIF
+
+User can stay signed in:
+-When the page initially renders, it calls componentDidMount,
+-The method checks local storage for a token, if it present, it decodes
+the token to obtain the user (payload)
+-The page rerenders, and since the user is truthy, when the Home component is rendered
+it immediately displays the GIF again
