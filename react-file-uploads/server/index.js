@@ -27,13 +27,13 @@ app.post('/api/uploads', uploadsMiddleware, (req, res, next) => {
    * - respond with the inserted row data
    * - catch any errors
    */
-  const url = path.join('/images/', req.file.filename);
+  const url = 'images/' + req.file.filename;
   const sql = `
     insert into "images" ("caption", "url")
-    values ($1, $2);
+    values ($1, $2)
     returning *
   `;
-  const params = [url, req.caption];
+  const params = [req.body.caption, url];
   db.query(sql, params)
     .then(result => {
       res.json(result.rows[0]);

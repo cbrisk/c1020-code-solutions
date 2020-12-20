@@ -17,7 +17,19 @@ export default class App extends React.Component {
      * - catch any promise rejection
      */
     event.preventDefault();
-    const Form = new FormData(event.target);
+    const form = new FormData(event.target);
+    fetch('api/uploads', {
+      method: 'POST',
+      body: form
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        event.target.reset();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
   }
 
   render() {
